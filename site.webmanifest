@@ -1,17 +1,24 @@
 {
   "name": "Andrestóteles",
   "short_name": "Andrestóteles",
+  "description": "Música espiritual y emocional, y jingles comerciales con intención.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#111111",
   "theme_color": "#2A215C",
-  "description": "Música espiritual y emocional, y jingles comerciales con intención.",
+  "lang": "es",
   "icons": [
     {
-      "src": "/favicon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml"
+      "src": "/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
     }
-  ],
-  "lang": "es"
+  ]
 }

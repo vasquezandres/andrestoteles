@@ -1,63 +1,86 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <!-- Basics -->
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="format-detection" content="telephone=no" />
 
-  <!-- Phase 1 SEO: title + description -->
+  <!-- Primary SEO -->
   <title>Andrestóteles | Música espiritual y jingles comerciales</title>
-  <meta name="description" content="Andrestóteles: artista venezolano con corazón panameño. Música espiritual y emocional basada en historias reales, y jingles comerciales con intención. Escucha mi último lanzamiento y sígueme en plataformas." />
+  <meta
+    name="description"
+    content="Andrestóteles: artista venezolano con corazón panameño. Música espiritual y emocional basada en historias reales, y jingles comerciales con intención. Escucha mi último lanzamiento y sígueme en plataformas."
+  />
   <link rel="canonical" href="https://andrestoteles.com/" />
-
-  <!-- Indexing -->
   <meta name="robots" content="index,follow,max-image-preview:large" />
+
+  <!-- Language -->
+  <link rel="alternate" hreflang="es" href="https://andrestoteles.com/" />
+  <link rel="alternate" hreflang="x-default" href="https://andrestoteles.com/" />
 
   <!-- Brand / UI -->
   <meta name="theme-color" content="#2A215C" />
 
-  <!-- Social (Open Graph) -->
+  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="es_ES" />
   <meta property="og:site_name" content="Andrestóteles" />
   <meta property="og:title" content="Andrestóteles | Música espiritual y jingles comerciales" />
-  <meta property="og:description" content="Música que nace de la fe y de historias reales. Y jingles con intención para marcas. Escucha mi último lanzamiento." />
+  <meta
+    property="og:description"
+    content="Música que nace de la fe y de historias reales. Y jingles con intención para marcas. Escucha mi último lanzamiento."
+  />
   <meta property="og:url" content="https://andrestoteles.com/" />
   <meta property="og:image" content="https://cdn.andrestoteles.com/andrestoteles.webp" />
   <meta property="og:image:width" content="1024" />
   <meta property="og:image:height" content="1024" />
 
-  <!-- Social (Twitter/X) -->
+  <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Andrestóteles | Música espiritual y jingles comerciales" />
-  <meta name="twitter:description" content="Música que nace de la fe y de historias reales. Y jingles con intención para marcas." />
+  <meta
+    name="twitter:description"
+    content="Música que nace de la fe y de historias reales. Y jingles con intención para marcas."
+  />
   <meta name="twitter:image" content="https://cdn.andrestoteles.com/andrestoteles.webp" />
 
-
-  <!-- Phase 3: language alternates -->
-  <link rel="alternate" hreflang="es" href="https://andrestoteles.com/" />
-  <link rel="alternate" hreflang="x-default" href="https://andrestoteles.com/" />
-
-  <!-- Phase 3: PWA / manifest -->
+  <!-- PWA -->
   <link rel="manifest" href="/site.webmanifest" />
-  <meta name="referrer" content="strict-origin-when-cross-origin" />
-  <meta name="format-detection" content="telephone=no" />
+
+  <!-- Icons (Favicon Generator style) -->
+  <!-- Ajusta nombres/paths según tus archivos reales -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="icon" href="/favicon.ico" />
+
+  <!-- Safari pinned tab (si lo generaste) -->
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#2A215C" />
+
+  <!-- Windows tiles (si lo generaste) -->
+  <meta name="msapplication-TileColor" content="#2A215C" />
+  <meta name="msapplication-config" content="/browserconfig.xml" />
 
   <!-- Performance: preconnect -->
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-  <link rel="preconnect" href="https://open.spotify.com" crossorigin>
-  <link rel="preconnect" href="https://i.scdn.co" crossorigin>
-  <link rel="preconnect" href="https://blogger.googleusercontent.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="preconnect" href="https://open.spotify.com" crossorigin />
+  <link rel="preconnect" href="https://i.scdn.co" crossorigin />
+  <link rel="preconnect" href="https://blogger.googleusercontent.com" crossorigin />
 
-  <!-- Icons -->
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<!-- CSS -->
-  <link rel="stylesheet" href="styles.css">
+  <!-- CSS -->
+  <link rel="stylesheet" href="/styles.css" />
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  />
 
-  <!-- Structured Data (JSON-LD) -->
+  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -88,10 +111,12 @@
   }
   </script>
 
-  <!-- Particles (defer) -->
-    <!--<script defer src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>-->
-  <script defer src="app.js"></script>
+  <!-- JS -->
+  <!-- particles opcional -->
+  <!-- <script defer src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> -->
+  <script defer src="/app.js"></script>
 </head>
+
 <body>
 
   <!--<div id="particles-js" aria-hidden="true"></div>-->
