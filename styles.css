@@ -1,0 +1,431 @@
+:root{
+  --bg:#111;
+  --particles-bg:#2A215C;
+  --btn-hover:#ff002e;
+  --bio-bg:#0047ff;
+  --link-bg:#f7e100;
+  --link-hover:#00e5ff;
+  --text:#fff;
+}
+
+html, body{
+  margin:0;
+  padding:0;
+  height: 100%;
+}
+
+body{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont,
+             "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text);
+  text-align: center;
+  background: var(--bg);
+  overflow: auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== Fondo animado sin JS ===== */
+body{
+  
+  margin: 0;
+
+  background:
+    radial-gradient(1200px at 15% 10%, rgba(255, 0, 47, 0.404), transparent 45%),
+    radial-gradient(900px at 85% 30%, rgba(175, 158, 5, 0.527), transparent 50%),
+    radial-gradient(700px at 50% 80%, rgba(0, 229, 255, 0.37), transparent 55%),
+    radial-gradient(1200px at 15% 10%, rgba(128, 1, 24, 0.37), transparent 45%),
+    radial-gradient(700px at 50% 80%, rgba(21, 142, 255, 0.589), transparent 55%),
+    linear-gradient(180deg, #0f1020 0%, #0c1253 100%);
+
+  background-size: 320% 320%;
+  animation: bg-flow 10s ease-in-out infinite alternate;
+
+  color: white;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+@media (max-width: 768px){
+  body{
+    background-size: 360% 360%;
+  }
+}
+
+/* Animación lenta y elegante */
+@keyframes bg-flow{
+  0%   { background-position: 0% 0%; }
+  100% { background-position: 100% 100%; }
+}
+
+
+/* Background particles */
+#particles-js{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--particles-bg);
+  z-index: -1;
+}
+
+.container{
+  padding: 40px 20px;
+  max-width: 600px;
+  margin: auto;
+  position: relative;
+  z-index: 1;
+}
+
+main.container{
+  flex: 1;             /* esto empuja el footer abajo */
+  padding-top: 36px; /* espacio para el header fijo */
+}
+
+img.profile{
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  margin-bottom: 20px;
+}
+
+h1{
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+
+.toggle-bio{
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(3px);
+  color: rgba(255, 255, 255, 0.85);
+  border: none;
+  padding: 15px 30px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.toggle-bio:hover{
+  background: var(--btn-hover);
+  transform: scale(1.03);
+}
+
+.toggle-bio i{
+  margin-left: 8px;
+  transition: transform 0.3s;
+}
+
+.bio-box{
+  background: var(--bio-bg);
+  border-radius: 20px;
+  padding: 20px;
+  margin: 20px auto 30px;
+  max-width: 500px;
+  color: #fff;
+  font-size: .9rem;
+  line-height: 1.6;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  display: none;
+}
+
+.bio-box.show{
+  display: block;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.bio-box2{
+  background: transparent;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 20px auto 30px;
+  max-width: 500px;
+  color: #ffffffc5;
+  font-size: .9rem;
+  line-height: 1.6;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  display: none;
+}
+
+.links a{
+  display: block;
+  background: var(--link-bg);
+  color: black;
+  padding: 15px;
+  margin: 10px auto;
+  border-radius: 30px;
+  width: 90%;
+  max-width: 400px;
+  text-decoration: none;
+  transition: 0.3s;
+  backdrop-filter: blur(4px);
+}
+
+.links a:hover{
+  background: var(--link-hover);
+  transform: scale(1.05);
+}
+
+.links a i{
+  margin-right: 10px;
+}
+
+.links a:focus{
+  outline: none;
+  box-shadow: none;
+  background: var(--link-bg);
+}
+
+.rotate{
+  transform: rotate(180deg);
+}
+
+@keyframes fadeIn{
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
+/* Variantes de botones por categoría */
+.link-music {
+  background: linear-gradient(135deg, #7c5cff, #4b3cff);
+  color: #fff;
+}
+
+.link-music:hover {
+  background: linear-gradient(135deg, #9a86ff, #5e4bff);
+}
+
+.link-jingles {
+  background: linear-gradient(135deg, #ff9f1c, #ff6a00);
+  color: #000;
+}
+
+.link-jingles:hover {
+  background: linear-gradient(135deg, #ffb347, #ff7a18);
+}
+
+
+.link-contact {
+  background: linear-gradient(135deg, #ff002e, #ff6b6b);
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 0 20px rgba(255, 0, 46, 0.45);
+}
+
+.link-contact:hover {
+  transform: scale(1.07);
+  background: linear-gradient(135deg, #ff3355, #ff8585);
+}
+
+/* Header + footer */
+body{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main.container{
+  flex: 1;
+  padding-top: 78px; /* espacio para el header fijo */
+}
+
+
+
+.nav-wrap{
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 14px 16px;
+  display: flex;
+  justify-content: center;
+}
+
+
+
+.nav-item{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 12px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.80);
+  background: transparent;
+  transition: background .2s ease, transform .15s ease;
+  font-size: .75rem;
+}
+
+.nav-item:hover{ background: rgba(255,255,255,.10); transform: translateY(-1px); }
+
+
+.nav-item.is-active{
+  background: rgba(255, 0, 46, .35);
+  box-shadow: 0 10px 25px rgba(0,0,0,.20);
+}
+
+.site-footer{
+  margin-top: auto;
+  padding: 18px 16px 24px;
+  text-align: center;
+  color: rgba(255,255,255,.85);
+}
+
+.footer-inner{
+  max-width: 760px;
+  margin: 0 auto;
+  border-top: 1px solid rgba(255,255,255,.08);
+  padding-top: 16px;
+}
+
+.footer-line{
+  font-size: .75rem;
+  margin-bottom: 8px;
+}
+
+.footer-links{
+  font-size: .75rem;
+}
+
+.footer-links a{
+  color: rgba(255,255,255,.9);
+  text-decoration: none;
+}
+
+.footer-links a:hover{
+  text-decoration: underline;
+}
+
+.footer-links .dot{
+  margin: 0 8px;
+  opacity: .7;
+}
+
+
+/* ===== Layout para footer al final SIEMPRE ===== */
+html, body { height: 100%; }
+
+body{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* OJO: tu main actual es <main class="container"> */
+main.container{
+  flex: 1;
+  padding-top: 64px; /* espacio para el header */
+}
+
+/* ===== Header / Nav (barra limpia) ===== */
+.site-header{
+  position: fixed;       /* mejor que sticky para que el efecto sea consistente */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background: transparent;
+  border: 0;
+  isolation: isolate;    /* importante para el pseudo-element */
+}
+
+
+
+.topnav{
+  max-width: 760px;
+  margin: 0 auto;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  display: inline-flex;
+  gap: 6px;
+  padding: 6px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.08);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0,0,0,.18);
+}
+.nav-link{
+  position: relative;
+  display: inline-flex;
+  gap: 5px;
+  align-items: center;
+  padding: 6px 6px;
+  color: rgba(255,255,255,.9);
+  text-decoration: none;
+  font-weight: 300;
+  letter-spacing: .2px;
+  opacity: .9;
+}
+
+.nav-link:hover{ opacity: 1; }
+
+.nav-link::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -8px;
+  height: 2px;
+  background: transparent;
+  border-radius: 2px;
+  transition: background .2s ease;
+}
+
+.nav-link.is-active::after{
+  background: rgba(255, 0, 46, .85);
+}
+
+/* ===== Footer al final ===== */
+.site-footer{
+  margin-top: auto;
+  padding: 18px 16px 24px;
+  text-align: center;
+  color: rgba(255,255,255,.85);
+}
+
+.footer-inner{
+  max-width: 760px;
+  margin: 0 auto;
+  border-top: 1px solid rgba(255,255,255,.08);
+  padding-top: 16px;
+}
+
+
+/* Spotify embeds: control de ancho + look */
+.spotify-embed{
+  max-width: 560px;   /* ajusta aquí: 520, 600, etc */
+  margin: 14px auto;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 14px 35px rgba(0,0,0,.25);
+}
+.spotify-embed iframe{
+  display:block;
+  width:100%;
+  border:0;
+}
+
+
+
+.nav-wrap{
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 8px 12px;
+  display: flex;
+  justify-content: center;
+}
+
+
+
+
+
+
+
+
+

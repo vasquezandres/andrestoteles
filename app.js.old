@@ -1,0 +1,84 @@
+/* Phase 1: keep existing behavior, just move it to a separate file */
+(function () {
+  "use strict";
+
+  async function injectPartials() {
+    const headerMount = document.getElementById("site-header");
+    const footerMount = document.getElementById("site-footer");
+
+    async function loadInto(url, mount) {
+      if (!mount) return;
+      try {
+        const res = await fetch(url, { cache: "no-cache" });
+        if (!res.ok) return;
+        mount.innerHTML = await res.text();
+      } catch (_) {}
+    }
+
+    await Promise.all([
+      loadInto("/partials/header.html", headerMount),
+      loadInto("/partials/footer.html", footerMount)
+    ]);
+
+    try {
+      const path = location.pathname.replace(/\/index\.html$/, "/");
+      document.querySelectorAll(".topnav .nav-item").forEach((a) => {
+        const href = new URL(a.getAttribute("href"), location.origin).pathname;
+        const isActive = (href === "/" && path === "/") || (href !== "/" && path.startsWith(href));
+        if (isActive) a.classList.add("is-active");
+      });
+    } catch (_) {}
+  }
+
+
+  // Particles background
+  if (typeof particlesJS === "function") {
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 80, density: { enable: true, value_area: 800 } },
+        color: { value: "#ffffff" },
+        shape: { type: "circle" },
+        opacity: {
+          value: 0.5,
+          random: true,
+          anim: { enable: true, speed: 1, opacity_min: 0.1, sync: false }
+        },
+        size: {
+          value: 3,
+          random: true,
+          anim: { enable: true, speed: 2, size_min: 0.1, sync: false }
+        },
+        line_linked: { enable: true, distance: 150, color: "#ffffff", opacity: 0.4, width: 1 },
+        move: { enable: true, speed: 2, direction: "none", random: true, straight: false, out_mode: "out", bounce: false }
+      },
+      interactivity: {
+        detect_on: "canvas",
+        events: {
+          onhover: { enable: true, mode: "repulse" },
+          onclick: { enable: true, mode: "push" },
+          resize: true
+        },
+        modes: { repulse: { distance: 100, duration: 0.4 }, push: { particles_nb: 4 } }
+      },
+      retina_detect: true
+    });
+  }
+
+  injectPartials();
+
+  // Toggle bio
+  window.toggleBio = function toggleBio() {
+    const bio = document.getElementById("bio");
+    const arrow = document.getElementById("bio-arrow");
+    if (!bio || !arrow) return;
+    bio.classList.toggle("show");
+    arrow.classList.toggle("rotate");
+
+    // Accessibility: keep aria state in sync
+    const btn = document.getElementById("bio-toggle-btn");
+    if (btn) {
+      const expanded = bio.classList.contains("show");
+      btn.setAttribute("aria-expanded", String(expanded));
+    }
+  };
+})();

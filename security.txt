@@ -1,0 +1,3 @@
+Contact: https://andrestoteles.com/
+Expires: 2026-12-26T00:00:00.000Z
+Preferred-Languages: es
